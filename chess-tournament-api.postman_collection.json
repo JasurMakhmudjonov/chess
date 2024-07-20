@@ -1,0 +1,509 @@
+{
+	"info": {
+		"_postman_id": "7f2d25f6-3e07-4de4-ad11-d8296108c236",
+		"name": "chess-tournament-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34421655"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\": \"Bahrom\",\r\n    \"email\": \"bahrom@gmail.com\",\r\n    \"password\": \"12345\",\r\n    \"age\": 19,\r\n    \"country\": \"Uzbekistan\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/auth/register",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jasur@gmail.com\",\r\n    \"password\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/auth/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "matches",
+			"item": [
+				{
+					"name": "update match",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwNmQxYWI4LWUwZGMtNGQwZS1hZGNjLTg1YzY2ZjFkNTAxMCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcyMTQ5OTc1MywiZXhwIjoxNzIxNTg2MTUzfQ.daIsHsvIN0g6ADlqjS54Sn6DhmT0nKhY-4OAANvc0kI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"player1_result\": \"LOSS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/matches/55c2e24a-b07e-4261-8da1-ee02f385351c",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"matches",
+								"55c2e24a-b07e-4261-8da1-ee02f385351c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show matches",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/matches/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"matches",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show own matches",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/matches/own",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"matches",
+								"own"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tournament",
+			"item": [
+				{
+					"name": "add tournament",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwNmQxYWI4LWUwZGMtNGQwZS1hZGNjLTg1YzY2ZjFkNTAxMCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcyMTQ2NDg2NywiZXhwIjoxNzIxNTUxMjY3fQ.xe-ZdDpAIfTJXADNtvs_oZNxl8CQ3r-Fm7AfqpjKuX8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Copa Amerika 2018 \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/tournaments",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"tournaments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show tournaments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwNmQxYWI4LWUwZGMtNGQwZS1hZGNjLTg1YzY2ZjFkNTAxMCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcyMTQ5OTc1MywiZXhwIjoxNzIxNTg2MTUzfQ.daIsHsvIN0g6ADlqjS54Sn6DhmT0nKhY-4OAANvc0kI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/api/tournaments",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"tournaments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Tournament",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwNmQxYWI4LWUwZGMtNGQwZS1hZGNjLTg1YzY2ZjFkNTAxMCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcyMTQ2NDg2NywiZXhwIjoxNzIxNTUxMjY3fQ.xe-ZdDpAIfTJXADNtvs_oZNxl8CQ3r-Fm7AfqpjKuX8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Euro 2018\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/tournaments/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"tournaments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove tournament",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/tournaments/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"tournaments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "showOne",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwNmQxYWI4LWUwZGMtNGQwZS1hZGNjLTg1YzY2ZjFkNTAxMCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcyMTQ3MTE5MywiZXhwIjoxNzIxNTU3NTkzfQ.HTAwKU62Ew78Xkilrmr4dMaKCWBD_ps0T2VeNOBvQFg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/api/tournaments/own",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"tournaments",
+								"own"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assign player",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"e0fc90d9-22b6-4a3e-a157-6201b6d5aae0\",\r\n    \"tournament_id\": \"08dbaf4a-de7b-4b79-8b15-7a813e099b4a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/tournaments/assign",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"tournaments",
+								"assign"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "start",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwNmQxYWI4LWUwZGMtNGQwZS1hZGNjLTg1YzY2ZjFkNTAxMCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcyMTQ5OTc1MywiZXhwIjoxNzIxNTg2MTUzfQ.daIsHsvIN0g6ADlqjS54Sn6DhmT0nKhY-4OAANvc0kI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/api/tournaments/start/08dbaf4a-de7b-4b79-8b15-7a813e099b4a",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"tournaments",
+								"start",
+								"08dbaf4a-de7b-4b79-8b15-7a813e099b4a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "leaderboard",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/tournaments/leaderboard/08dbaf4a-de7b-4b79-8b15-7a813e099b4a",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"tournaments",
+								"leaderboard",
+								"08dbaf4a-de7b-4b79-8b15-7a813e099b4a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "getUsers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwNmQxYWI4LWUwZGMtNGQwZS1hZGNjLTg1YzY2ZjFkNTAxMCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcyMTQ5OTc1MywiZXhwIjoxNzIxNTg2MTUzfQ.daIsHsvIN0g6ADlqjS54Sn6DhmT0nKhY-4OAANvc0kI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "leaderboard",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/users/leaderboard",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"leaderboard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwNmQxYWI4LWUwZGMtNGQwZS1hZGNjLTg1YzY2ZjFkNTAxMCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcyMTQ5OTc1MywiZXhwIjoxNzIxNTg2MTUzfQ.daIsHsvIN0g6ADlqjS54Sn6DhmT0nKhY-4OAANvc0kI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\": \"kamol\",\r\n    \"email\": \"kamol@gmail.com\",\r\n    \"password\": \"1111\",\r\n    \"age\": 24,\r\n    \"country\":\"Uzebekistan\",\r\n    \"isAdmin\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/users/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwNmQxYWI4LWUwZGMtNGQwZS1hZGNjLTg1YzY2ZjFkNTAxMCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcyMTQ5OTc1MywiZXhwIjoxNzIxNTg2MTUzfQ.daIsHsvIN0g6ADlqjS54Sn6DhmT0nKhY-4OAANvc0kI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\": \"kamol 77\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/users/63b3dd5c-b327-4818-a65e-ce0b72cca5ce",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"63b3dd5c-b327-4818-a65e-ce0b72cca5ce"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/users/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
